@@ -14,57 +14,81 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
-<?php do_action( 'wp_body_open' ); ?>
-<div class="site" id="page">
+    <?php do_action( 'wp_body_open' ); ?>
+    <div class="site" id="page">
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<div id="wrapper-navbar">
+        <!-- ******************* The Navbar Area ******************* -->
+        <div id="wrapper-navbar">
+            <div class="top-header-holder">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-4">
+                            <a href="/" class="logo-holder">
+                                <div class="logo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg"
+                                        alt="The Backbeach Logo" width="275">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <div class="reservation-holder">
+                                <div class="contact-holder">
+                                    <a href="#" class=" phone">
+                                        <i class="fa fa-phone"></i> 021 9684283
+                                    </a>
+                                    <a href="#" class=" address">
+                                        <i class="fa fa-map-marker"></i> Karangasem, Bali, Indonesia
+                                    </a>
+                                </div>
+                                <a href="#" class="reservation-btn">Make a Reservation</a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="social-media-holder">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		<div class="top-header-holder">
-			<div class="container">
-				<div class="logo-holder">
-					<div class="logo"></div>
-				</div>
-				<div class="reservation-holder">
-					<div class="contact-holder">
-						<div class="phone"> 021 9684283</div>
-						<div class="address">Denpasar, Bali</div>
-					</div>
-					<div class="reservation-btn">Make a Reservation</div>
-				</div>
-				<div class="social-media-holder">
-					<i class="fa fa-instagram"></i>
-					<i class="fa fa-facebook"></i>
-				</div>
-			</div>
-		</div>
+            <a class="skip-link sr-only sr-only-focusable"
+                href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
+            <nav id="main-nav" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
 
-		<nav id="main-nav" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
+                <h2 id="main-nav-label" class="sr-only">
+                    <?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
+                </h2>
 
-			<h2 id="main-nav-label" class="sr-only">
-				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
-			</h2>
+                <div class="container">
 
-			<div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<!-- The WordPress Menu goes here -->
-				<?php
+                    <!-- The WordPress Menu goes here -->
+                    <?php
 				wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
@@ -78,8 +102,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				);
 				?>
-			</div><!-- .container -->
+                </div><!-- .container -->
 
-		</nav><!-- .site-navigation -->
+            </nav><!-- .site-navigation -->
 
-	</div><!-- #wrapper-navbar end -->
+        </div><!-- #wrapper-navbar end -->
